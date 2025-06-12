@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TechFeed" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/tech_blue</item>
+        <item name="colorPrimaryVariant">@color/tech_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/tech_blue_light</item>
+        <item name="colorSecondaryVariant">@color/tech_blue_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorError">@color/red_600</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:colorBackground">@color/light_gray</item>
+        <item name="android:statusBarColor">@color/tech_blue</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <!-- Disable default action bar to use custom Toolbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.TechFeed" parent="Base.Theme.TechFeed" />
+</resources>

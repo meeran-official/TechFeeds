@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- TODO: Add <include> and <exclude> rules here for what you want backed up.
+         Learn more at https://developer.android.com/guide/topics/data/autobackup -->
+    <include domain="sharedpref" path="."/>
+<!--    <exclude domain="database" path="my_temp_db.db"/>-->
+</full-backup-content>
