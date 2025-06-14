@@ -39,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
     // Categories for the tabs
     private final String[] categories = {"technology", "business", "entertainment", "health", "science", "sports"};
     private final String[] categoryTitles = {"Tech", "Business", "Entertainment", "Health", "Science", "Sports"};
-      @Override
+    
+    // AI Article Analyzer
+    private ArticleAIAnalyzer aiAnalyzer;
+    
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -57,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
         
         // Create Retrofit instance
         setupRetrofit();
+        
+        // Initialize AI analyzer
+        aiAnalyzer = new ArticleAIAnalyzer(this);
         
         // Fetch news articles
         fetchTopHeadlines();
@@ -164,8 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     NewsResponse newsResponse = response.body();
                     List<Article> articles = newsResponse.getArticles();
-                    
-                    if (articles != null && !articles.isEmpty()) {
+                      if (articles != null && !articles.isEmpty()) {
                         if (currentPage == 1) {
                             // Replace articles for first page
                             newsAdapter.updateArticles(articles);
@@ -173,6 +179,10 @@ public class MainActivity extends AppCompatActivity {
                             // Add articles for subsequent pages
                             newsAdapter.addArticles(articles);
                         }
+                        
+                        // Start AI analysis for the loaded articles
+                        analyzeArticlesWithAI(articles);
+                        
                         Log.d(TAG, "Successfully loaded " + articles.size() + " articles for page " + currentPage);
                     } else {
                         Log.w(TAG, "No articles found in response");
@@ -211,5 +221,32 @@ public class MainActivity extends AppCompatActivity {
     
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+    
+    private void analyzeArticlesWithAI(List<Article> articles) {
+        Log.d(TAG, "Starting AI analysis for " + articles.size() + " articles");
+        
+        for (int i = 0; i < articles.size(); i++) {
+            final Article article = articles.get(i);
+            final int position = i;
+            
+            // Analyze each article with AI
+            aiAnalyzer.analyzeArticle(article, new ArticleAIAnalyzer.AnalysisCallback() {
+                @Override
+                public void onAnalysisComplete(Article analyzedArticle) {
+                    runOnUiThread(() -> {
+                        // Update the adapter to show new insights
+                        newsAdapter.notifyItemChanged(newsAdapter.getArticlePosition(analyzedArticle));
+                        Log.d(TAG, "AI analysis complete for: " + analyzedArticle.getTitle());
+                    });
+                }
+                
+                @Override
+                public void onAnalysisError(String error) {
+                    Log.e(TAG, "AI analysis failed: " + error);
+                    // Continue without AI insights
+                }
+            });
+        }
     }
 }

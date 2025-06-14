@@ -22,6 +22,15 @@ public class Article {
     @SerializedName("urlToImage")
     private String urlToImage;
     
+    // AI-Enhanced fields for social impact
+    private String aiSummary;
+    private String sentimentScore; // "positive", "negative", "neutral"
+    private boolean isSolutionOriented;
+    private boolean isFactChecked;
+    private String impactCategory; // "climate", "health", "education", "poverty", "technology"
+    private int readabilityScore; // 1-10 scale
+    private boolean hasContentWarning;
+    
     // Default constructor
     public Article() {
     }
@@ -91,6 +100,99 @@ public class Article {
         this.urlToImage = urlToImage;
     }
     
+    // Getter for aiSummary
+    public String getAiSummary() {
+        return aiSummary;
+    }
+    
+    // Setter for aiSummary
+    public void setAiSummary(String aiSummary) {
+        this.aiSummary = aiSummary;
+    }
+    
+    // Getter for sentimentScore
+    public String getSentimentScore() {
+        return sentimentScore;
+    }
+    
+    // Setter for sentimentScore
+    public void setSentimentScore(String sentimentScore) {
+        this.sentimentScore = sentimentScore;
+    }
+    
+    // Getter for isSolutionOriented
+    public boolean isSolutionOriented() {
+        return isSolutionOriented;
+    }
+    
+    // Setter for isSolutionOriented
+    public void setSolutionOriented(boolean solutionOriented) {
+        isSolutionOriented = solutionOriented;
+    }
+    
+    // Getter for isFactChecked
+    public boolean isFactChecked() {
+        return isFactChecked;
+    }
+    
+    // Setter for isFactChecked
+    public void setFactChecked(boolean factChecked) {
+        isFactChecked = factChecked;
+    }
+    
+    // Getter for impactCategory
+    public String getImpactCategory() {
+        return impactCategory;
+    }
+    
+    // Setter for impactCategory
+    public void setImpactCategory(String impactCategory) {
+        this.impactCategory = impactCategory;
+    }
+    
+    // Getter for readabilityScore
+    public int getReadabilityScore() {
+        return readabilityScore;
+    }
+    
+    // Setter for readabilityScore
+    public void setReadabilityScore(int readabilityScore) {
+        this.readabilityScore = readabilityScore;
+    }
+    
+    // Getter for hasContentWarning
+    public boolean hasContentWarning() {
+        return hasContentWarning;
+    }
+    
+    // Setter for hasContentWarning
+    public void setHasContentWarning(boolean hasContentWarning) {
+        this.hasContentWarning = hasContentWarning;
+    }
+    
+    // AI-powered helper methods
+    public boolean isPositiveNews() {
+        return "positive".equals(sentimentScore);
+    }
+    
+    public String getReadabilityLevel() {
+        if (readabilityScore >= 8) return "Easy";
+        if (readabilityScore >= 5) return "Medium";
+        return "Complex";
+    }
+    
+    public String getImpactEmoji() {
+        if (impactCategory == null) return "📰";
+        switch (impactCategory.toLowerCase()) {
+            case "climate": return "🌍";
+            case "health": return "🏥";
+            case "education": return "📚";
+            case "poverty": return "🤝";
+            case "technology": return "💻";
+            default: return "📰";
+        }
+    }
+    
     @Override
     public String toString() {
         return "Article{" +
@@ -100,6 +202,13 @@ public class Article {
                 ", source=" + source +
                 ", url='" + url + '\'' +
                 ", urlToImage='" + urlToImage + '\'' +
+                ", aiSummary='" + aiSummary + '\'' +
+                ", sentimentScore='" + sentimentScore + '\'' +
+                ", isSolutionOriented=" + isSolutionOriented +
+                ", isFactChecked=" + isFactChecked +
+                ", impactCategory='" + impactCategory + '\'' +
+                ", readabilityScore=" + readabilityScore +
+                ", hasContentWarning=" + hasContentWarning +
                 '}';
     }
     

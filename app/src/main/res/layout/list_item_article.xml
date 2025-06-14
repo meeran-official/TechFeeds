@@ -28,9 +28,7 @@
             android:maxLines="3"
             android:ellipsize="end"
             android:layout_marginBottom="8dp"
-            android:text="Sample Article Title" />
-
-        <TextView
+            android:text="Sample Article Title" />        <TextView
             android:id="@+id/article_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,6 +40,53 @@
             android:layout_marginBottom="8dp"
             android:text="Article description will appear here..."
             android:visibility="gone" />
+
+        <!-- AI Insights Section -->
+        <LinearLayout
+            android:id="@+id/ai_insights_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/impact_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_background"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp"
+                android:text="🌍 Climate" />
+
+            <TextView
+                android:id="@+id/sentiment_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_background_green"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp"
+                android:text="😊 Positive" />
+
+            <TextView
+                android:id="@+id/solution_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_background_orange"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:text="💡 Solution"
+                android:visibility="gone" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

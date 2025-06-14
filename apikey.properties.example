@@ -6,3 +6,11 @@
 # 2. Create a free account
 # 3. Copy your API key and paste it below
 NEWS_API_KEY=YOUR_NEWS_API_KEY_HERE
+
+# Hugging Face API Key (Optional) - For AI-powered article analysis
+# 1. Go to https://huggingface.co/join
+# 2. Create a free account
+# 3. Go to Settings > Access Tokens
+# 4. Create a new token and paste it below
+# Note: Basic features work without this key, but AI analysis requires it
+HUGGING_FACE_API_KEY=YOUR_HUGGING_FACE_API_KEY_HERE

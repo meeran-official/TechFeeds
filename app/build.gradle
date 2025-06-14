@@ -21,10 +21,9 @@ android {
         versionCode 1
         versionName "1.0"
         
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        
-        // Add API key as build config field
-        buildConfigField "String", "NEWS_API_KEY", "\"${properties.getProperty('NEWS_API_KEY', 'YOUR_API_KEY_HERE')}\""
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"        // Add API key as build config field
+        buildConfigField "String", "NEWS_API_KEY", "\"${properties.getProperty('NEWS_API_KEY', 'demo_key')}\""
+        buildConfigField "String", "HUGGING_FACE_API_KEY", "\"${properties.getProperty('HUGGING_FACE_API_KEY', '')}\""
     }
 
     buildTypes {
@@ -79,6 +78,18 @@ dependencies {
     
     // OkHttp (recommended for Retrofit)
     implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    
+    // AI & ML APIs
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    
+    // Text-to-Speech for accessibility
+    implementation 'androidx.annotation:annotation:1.7.1'
+    
+    // Additional useful libraries
+    implementation 'com.github.bumptech.glide:glide:4.16.0' // Image loading
+    implementation 'androidx.preference:preference-ktx:1.2.1' // Settings
+    implementation 'androidx.work:work-runtime-ktx:2.9.0' // Background tasks
     
     // Testing dependencies
     testImplementation 'junit:junit:4.13.2'

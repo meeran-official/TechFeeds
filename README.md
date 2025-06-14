@@ -1,32 +1,37 @@
-# 📱 TechFeed - Modern News Reader App
+# 🌍 TechFeed - AI-Powered News for Humanity
 
-A beautiful, modern Android news application built with Java that delivers the latest news across multiple categories including Technology, Business, Entertainment, Health, Science, and Sports.
+**TechFeed** is more than just another news app. It's an AI-powered platform designed to help humanity stay informed about the news that matters most, with intelligent insights that promote understanding, empathy, and positive action.
 
 ![TechFeed App](https://img.shields.io/badge/Platform-Android-green.svg)
 ![API Level](https://img.shields.io/badge/API-21%2B-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![AI Powered](https://img.shields.io/badge/AI-Powered-purple.svg)
 
-## ✨ Features
+## � What Makes TechFeed Special?
 
-- 📰 **Multiple News Categories**: Technology, Business, Entertainment, Health, Science, Sports
-- 🔄 **Pull-to-Refresh**: Swipe down to get the latest articles
-- 🎯 **Article Click Handling**: Tap any article to read the full story
-- 📱 **Modern Material Design UI**: Clean, professional interface with card-based layout
-- 🌙 **Theme Support**: Light and dark theme compatibility
-- 🔗 **External Browser Integration**: Seamlessly opens articles in your preferred browser
-- ⚡ **Fast Loading**: Optimized performance with efficient data handling
+### 🤖 AI-Powered Analysis
+- **Smart Categorization**: Automatically identifies whether news relates to climate, health, education, poverty, or technology
+- **Sentiment Analysis**: Shows if news is positive, negative, or neutral to help balance your information diet
+- **Solution Detection**: Highlights articles that present solutions rather than just problems
+- **Content Warnings**: Flags potentially distressing content for mental health
 
-## 🚀 Screenshots
+### 🌟 Humanity-First Features
+- **Impact Categories**: Focus on news that affects real people - climate action, healthcare breakthroughs, educational innovations
+- **Solution Spotlight**: AI identifies and promotes solution-oriented journalism
+- **Positive Balance**: Algorithm ensures you see hope alongside challenges
+- **Accessibility**: Built with inclusive design principles
 
-| Home Screen | Category Tabs | Article Details |
-|-------------|---------------|-----------------|
-| *Coming Soon* | *Coming Soon* | *Coming Soon* |
+### 📱 Modern Android Experience
+- **Material Design 3**: Beautiful, accessible interface
+- **Multiple Categories**: Technology, Business, Health, Science, Sports, Entertainment
+- **Pull-to-Refresh**: Always get the latest news
+- **Fast Performance**: Optimized for Android 5.0+ devices
 
 ## 🛠️ Tech Stack
 
 - **Language**: Java
 - **UI Framework**: Android Views with Material Design Components
-- **Architecture**: MVP (Model-View-Presenter)
+- **Architecture**: MVP (Model-View-Presenter) with AI Integration
 - **Networking**: Retrofit 2 + OkHttp
 - **JSON Parsing**: Gson
 - **API**: [NewsAPI.org](https://newsapi.org/)
