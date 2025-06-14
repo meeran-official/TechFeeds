@@ -24,7 +24,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
         // Add API key as build config field
-        buildConfigField "String", "NEWS_API_KEY", "\"${properties.getProperty('NEWS_API_KEY', '026022a8b7c649fb9b0f49d9f81e30e4')}\""
+        buildConfigField "String", "NEWS_API_KEY", "\"${properties.getProperty('NEWS_API_KEY', 'YOUR_API_KEY_HERE')}\""
     }
 
     buildTypes {
