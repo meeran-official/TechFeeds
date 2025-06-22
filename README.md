@@ -140,12 +140,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Retrofit](https://square.github.io/retrofit/) for networking
 - Android Open Source Project
 
-## 📞 Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
-
-Project Link: [https://github.com/yourusername/TechFeed](https://github.com/yourusername/TechFeed)
-
----
-
-⭐ **If you found this project helpful, please give it a star!** ⭐
